@@ -1,9 +1,14 @@
 ###LIBRARIES###
 from translate import translate
 from perfekt import perfect
+from os import name, system
 
 ###MAIN###
 def main():
+	if name == "nt":
+		system("cls")
+	else:
+		system("clear")
 	print("\n[[NARZEDZIE NA NIEMIECKI v0.1]]")
 	print("--------------------------------")
 	print("")

@@ -4,8 +4,10 @@ un = ['gebacken', 'befunden', 'begonnen', 'bekommen', 'besprochen', 'gebeten', '
 def perfect(word):
 	if word in st:
 		unregular(word)
+		input("---DALEJ---")
 	else:
 		regular(word)
+		input("---DALEJ---")
 
 def regular(word):
 	beginning = word[:3]
@@ -15,10 +17,10 @@ def regular(word):
 	final = ""
 	for x in unregular_end:
 		if "t" == word[-3]:
-			final = "ge"+word[:-2]+"et" 
+			final = "ge"+word[:-2]+"et"
 		if "d" == word[-3]:
 			final = "ge"+word[:-2]+"et"
-		if word.find(x) != -1 and (x != "t" or x!= "d"):
+		if word.find(x) != -1 and x != "t" and x!= "d":
 			final = "ge"+word[:-2]+"et"
 
 		if final != "":
