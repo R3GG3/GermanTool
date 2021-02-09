@@ -12,7 +12,7 @@ def perfect(word):
 def regular(word):
 	beginning = word[:3]
 	ending = word[-5:]
-	unregular_beg = ['auf', 'ein']
+	unregular_beg = ['auf', 'ein', 'uber']
 	unregular_end = ['t', 'd', 'chn', 'ffn', 'mn']
 	final = ""
 	for x in unregular_end:

@@ -26,5 +26,4 @@ def main():
 
 
 #Rest
-while True:
-	main()
+main()

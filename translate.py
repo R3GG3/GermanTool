@@ -28,8 +28,8 @@ def translate(word):
 	link = "https://www.google.com/search?q={0}+na+polski".format(word)
 	
 	#UTF-8 ISSUES, MANUALLY NEEDED
-	encoded = ['&#263;']
-	decoded = ['ć']
+	encoded = ['&#263;', '&#322;', '&#380;']
+	decoded = ['ć', 'ł', 'ż']
 
 	scrapper = requests.get(link)
 	scrapper.encoding = "utf-8"
@@ -38,14 +38,16 @@ def translate(word):
 	scrapping = scrapping[:scrapping.index("</div>")]
 	scrapping = scrapping[scrapping.index(">")+1:]
 	word2 = scrapping
-	
-	if word2.find("&") != -1:
-		last = word2[word2.index("&"):]
-		for i in encoded:
-			if i == last:
-				letter = decoded[encoded.index(i)]
-				word2 = word2.replace(last, letter)
-	
+	while word2.find("&") != -1:
+		try:
+			for i in encoded:
+				last = word2[word2.index("&"):word2.index(";")+1]
+				if i == last:
+					letter = decoded[encoded.index(i)]
+					word2 = word2.replace(last, letter)
+		except:
+			break
+
 	f = open("translator.txt", "a")
 	f.write(word+"\n")
 	f.write(word2+"\n")
