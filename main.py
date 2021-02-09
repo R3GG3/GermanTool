@@ -9,7 +9,7 @@ def main():
 		system("cls")
 	else:
 		system("clear")
-	print("\n[[NARZEDZIE NA NIEMIECKI v0.1]]")
+	print("\n[[NARZEDZIE NA NIEMIECKI v0.9]]")
 	print("--------------------------------")
 	print("")
 	print("Co chcesz zrobic?")
@@ -26,5 +26,4 @@ def main():
 
 
 #Rest
-#while True:
 main()
