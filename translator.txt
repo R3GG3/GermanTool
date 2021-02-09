@@ -1,2 +1,4 @@
 stellen
 położyć
+planen
+planować

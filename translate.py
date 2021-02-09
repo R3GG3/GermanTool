@@ -39,14 +39,14 @@ def translate(word):
 	scrapping = scrapping[scrapping.index(">")+1:]
 	word2 = scrapping
 	while word2.find("&") != -1:
-		try:
-			for i in encoded:
-				last = word2[word2.index("&"):word2.index(";")+1]
-				if i == last:
-					letter = decoded[encoded.index(i)]
-					word2 = word2.replace(last, letter)
-		except:
-			break
+		#try:
+		for i in encoded:
+			last = word2[word2.index("&"):word2.index(";")+1]
+			if i == last:
+				letter = decoded[encoded.index(i)]
+				word2 = word2.replace(last, letter)
+		#except:
+			#pass
 
 	f = open("translator.txt", "a")
 	f.write(word+"\n")
@@ -54,3 +54,4 @@ def translate(word):
 	f.close()
 	
 	print("\nPo polsku to: "+word2)
+	input("---DALEJ---")
